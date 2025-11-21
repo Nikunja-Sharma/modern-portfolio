@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name — Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-stone-50 text-stone-900">
+    
+    <!-- Vertical Contents Index -->
+    <nav id="contents-nav" class="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
+        <div class="space-y-6 text-xs tracking-widest uppercase">
+            <a href="#hero" class="nav-link block hover:text-stone-900 transition-colors" data-section="hero">
+                <span class="nav-number">01</span>
+                <span class="nav-text">Intro</span>
+            </a>
+            <a href="#about" class="nav-link block hover:text-stone-900 transition-colors" data-section="about">
+                <span class="nav-number">02</span>
+                <span class="nav-text">About</span>
+            </a>
+            <a href="#experience" class="nav-link block hover:text-stone-900 transition-colors" data-section="experience">
+                <span class="nav-number">03</span>
+                <span class="nav-text">Experience</span>
+            </a>
+            <a href="#projects" class="nav-link block hover:text-stone-900 transition-colors" data-section="projects">
+                <span class="nav-number">04</span>
+                <span class="nav-text">Projects</span>
+            </a>
+            <a href="#contact" class="nav-link block hover:text-stone-900 transition-colors" data-section="contact">
+                <span class="nav-number">05</span>
+                <span class="nav-text">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen relative overflow-hidden grain-bg">
+        <div class="container mx-auto px-6 lg:px-24 pt-32 pb-20">
+            <div class="max-w-7xl mx-auto">
+                <!-- Issue Number -->
+                <div class="text-xs tracking-widest uppercase mb-8 text-stone-500">
+                    Issue No. 01 / 2024
+                </div>
+                
+                <!-- Main Headline -->
+                <h1 class="hero-title mb-6">
+                    <span class="block">Nikunja</span>
+                    <span class="block italic font-light">Sarma</span>
+                </h1>
+                
+                <!-- Subtitle -->
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+                    <p class="text-xl lg:text-2xl max-w-md leading-relaxed">
+                        Creative Developer & Designer crafting digital experiences with editorial sensibility
+                    </p>
+                    <div class="text-sm tracking-wide uppercase text-stone-500">
+                        Based in Guwahati, Assam
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Hero Bento Grid -->
+                <div class="relative mt-20">
+                    <div class="grid grid-cols-4 lg:grid-cols-6 gap-3 lg:gap-4">
+                        <div class="col-span-2 lg:col-span-3 aspect-square bento-card bg-stone-900 hover-lift">
+                            <div class="p-6 lg:p-8 h-full flex flex-col justify-between">
+                                <div class="text-xs tracking-widest uppercase text-stone-400">Design</div>
+                                <div class="text-4xl lg:text-6xl text-stone-50 font-light">∞</div>
+                            </div>
+                        </div>
+                        <div class="col-span-2 lg:col-span-2 aspect-square bento-card bg-stone-200 hover-lift cursor-pointer" id="interactive-grid">
+                            <div class="grid grid-cols-3 grid-rows-3 h-full gap-1 p-2">
+                                <div class="grid-cell bg-stone-900"></div>
+                                <div class="grid-cell bg-stone-300"></div>
+                                <div class="grid-cell bg-stone-900"></div>
+                                <div class="grid-cell bg-stone-300"></div>
+                                <div class="grid-cell bg-stone-900"></div>
+                                <div class="grid-cell bg-stone-300"></div>
+                                <div class="grid-cell bg-stone-900"></div>
+                                <div class="grid-cell bg-stone-300"></div>
+                                <div class="grid-cell bg-stone-900"></div>
+                            </div>
+                        </div>
+                        <div class="col-span-2 lg:col-span-1 aspect-square bento-card bg-stone-800 hover-lift">
+                            <div class="h-full flex items-center justify-center">
+                                <div class="rotating-text text-stone-50 text-2xl">✦</div>
+                            </div>
+                        </div>
+                        <div class="col-span-2 lg:col-span-2 aspect-square bento-card bg-stone-100 hover-lift">
+                            <div class="p-6 lg:p-8 h-full flex items-end">
+                                <div class="text-sm lg:text-base leading-relaxed">Crafting digital experiences</div>
+                            </div>
+                        </div>
+                        <div class="col-span-2 lg:col-span-4 aspect-[2/1] bento-card bg-stone-900 hover-lift overflow-hidden">
+                            <div class="marquee-container h-full flex items-center">
+                                <div class="marquee text-stone-50 text-2xl lg:text-4xl font-light whitespace-nowrap">
+                                    <span>CREATIVE DEVELOPER • DESIGNER • ARTIST • </span>
+                                    <span>CREATIVE DEVELOPER • DESIGNER • ARTIST • </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="caption-box">
+                        Portfolio 2024
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="min-h-screen py-32 relative">
+        <div class="container mx-auto px-6 lg:px-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+                    <!-- Section Number -->
+                    <div class="lg:col-span-2">
+                        <div class="section-number">02</div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="lg:col-span-10">
+                        <h2 class="section-title mb-12">
+                            About
+                        </h2>
+                        
+                        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                            <div class="space-y-6 text-lg leading-relaxed">
+                                <p>
+                                    I'm a multidisciplinary creative who believes in the power of thoughtful design and clean code. My work sits at the intersection of art direction and technical execution.
+                                </p>
+                                <p>
+                                    With a background in both visual design and development, I bring a unique perspective to every project—one that values aesthetics as much as functionality.
+                                </p>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bento-card bg-stone-900 hover-lift p-6 aspect-square flex flex-col justify-between">
+                                    <div class="text-xs tracking-widest uppercase text-stone-400">Expertise</div>
+                                    <div class="text-stone-50 text-sm space-y-1">
+                                        <div class="skill-tag">Frontend</div>
+                                        <div class="skill-tag">UI/UX</div>
+                                        <div class="skill-tag">Art Direction</div>
+                                    </div>
+                                </div>
+                                <div class="bento-card bg-stone-100 hover-lift p-6 aspect-square flex items-center justify-center cursor-pointer" id="hover-card">
+                                    <div class="text-6xl hover-emoji">👋</div>
+                                </div>
+                                <div class="bento-card bg-stone-200 hover-lift p-6 aspect-square flex flex-col justify-between">
+                                    <div class="text-xs tracking-widest uppercase text-stone-500">Tools</div>
+                                    <div class="text-sm space-y-1">
+                                        <div class="skill-tag">React</div>
+                                        <div class="skill-tag">Figma</div>
+                                        <div class="skill-tag">Three.js</div>
+                                    </div>
+                                </div>
+                                <div class="bento-card bg-stone-800 hover-lift p-6 aspect-square flex items-center justify-center">
+                                    <div class="pulse-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="min-h-screen py-32 relative grain-bg">
+        <div class="container mx-auto px-6 lg:px-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2">
+                        <div class="section-number">03</div>
+                    </div>
+                    
+                    <div class="lg:col-span-10">
+                        <h2 class="section-title mb-20">
+                            Experience
+                        </h2>
+                        
+                        <!-- Experience Items -->
+                        <div class="space-y-16">
+                            <div class="experience-item">
+                                <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4 mb-6">
+                                    <div>
+                                        <h3 class="text-3xl lg:text-4xl font-light mb-2">Senior Developer</h3>
+                                        <p class="text-xl text-stone-600">Company Name</p>
+                                    </div>
+                                    <div class="text-sm tracking-widest uppercase text-stone-500">
+                                        2022—Present
+                                    </div>
+                                </div>
+                                <p class="text-lg leading-relaxed max-w-3xl text-stone-600">
+                                    Leading frontend development for high-profile clients. Specializing in creating performant, accessible web experiences with a focus on design systems and component architecture.
+                                </p>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4 mb-6">
+                                    <div>
+                                        <h3 class="text-3xl lg:text-4xl font-light mb-2">Creative Developer</h3>
+                                        <p class="text-xl text-stone-600">Agency Name</p>
+                                    </div>
+                                    <div class="text-sm tracking-widest uppercase text-stone-500">
+                                        2020—2022
+                                    </div>
+                                </div>
+                                <p class="text-lg leading-relaxed max-w-3xl text-stone-600">
+                                    Developed interactive experiences and campaign websites for fashion and lifestyle brands. Collaborated closely with designers to push creative boundaries.
+                                </p>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4 mb-6">
+                                    <div>
+                                        <h3 class="text-3xl lg:text-4xl font-light mb-2">UI Designer</h3>
+                                        <p class="text-xl text-stone-600">Studio Name</p>
+                                    </div>
+                                    <div class="text-sm tracking-widest uppercase text-stone-500">
+                                        2018—2020
+                                    </div>
+                                </div>
+                                <p class="text-lg leading-relaxed max-w-3xl text-stone-600">
+                                    Designed digital products with emphasis on typography and layout. Developed brand identities and design systems for startups.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen py-32 relative">
+        <div class="container mx-auto px-6 lg:px-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2">
+                        <div class="section-number">04</div>
+                    </div>
+                    
+                    <div class="lg:col-span-10">
+                        <h2 class="section-title mb-20">
+                            Selected<br/>Projects
+                        </h2>
+                        
+                        <!-- Project Grid -->
+                        <div class="space-y-24">
+                            <!-- Project 1 -->
+                            <article class="project-item">
+                                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                                    <div class="order-2 lg:order-1">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="col-span-2 bento-card bg-stone-900 hover-lift aspect-[16/9] p-8 flex items-center justify-center">
+                                                <div class="text-stone-50 text-6xl lg:text-8xl font-light">01</div>
+                                            </div>
+                                            <div class="bento-card bg-stone-200 hover-lift aspect-square cursor-pointer color-shift"></div>
+                                            <div class="bento-card bg-stone-800 hover-lift aspect-square flex items-center justify-center">
+                                                <div class="text-stone-50 text-3xl rotating-slow">↗</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-1 lg:order-2 lg:pt-12">
+                                        <div class="text-xs tracking-widest uppercase mb-4 text-stone-500">
+                                            Web Design / Development
+                                        </div>
+                                        <h3 class="text-4xl lg:text-5xl font-light mb-6">Project Name</h3>
+                                        <p class="text-lg leading-relaxed mb-6 text-stone-600">
+                                            A minimal e-commerce experience for a sustainable fashion brand. Focus on editorial photography and seamless user journey.
+                                        </p>
+                                        <div class="flex gap-4 text-sm tracking-wide">
+                                            <span class="text-stone-500">React</span>
+                                            <span class="text-stone-500">Shopify</span>
+                                            <span class="text-stone-500">GSAP</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Project 2 -->
+                            <article class="project-item">
+                                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                                    <div class="lg:pt-12">
+                                        <div class="text-xs tracking-widest uppercase mb-4 text-stone-500">
+                                            Brand Identity / Web
+                                        </div>
+                                        <h3 class="text-4xl lg:text-5xl font-light mb-6">Another Project</h3>
+                                        <p class="text-lg leading-relaxed mb-6 text-stone-600">
+                                            Complete brand overhaul and digital presence for an independent magazine. Custom CMS and subscription platform.
+                                        </p>
+                                        <div class="flex gap-4 text-sm tracking-wide">
+                                            <span class="text-stone-500">Next.js</span>
+                                            <span class="text-stone-500">Sanity</span>
+                                            <span class="text-stone-500">Stripe</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="grid grid-cols-3 gap-3">
+                                            <div class="bento-card bg-stone-100 hover-lift aspect-square"></div>
+                                            <div class="bento-card bg-stone-900 hover-lift aspect-square flex items-center justify-center">
+                                                <div class="text-stone-50 text-4xl">02</div>
+                                            </div>
+                                            <div class="bento-card bg-stone-300 hover-lift aspect-square cursor-pointer ripple-effect"></div>
+                                            <div class="col-span-3 bento-card bg-stone-800 hover-lift aspect-[3/1] overflow-hidden">
+                                                <div class="wave-container h-full"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Project 3 -->
+                            <article class="project-item">
+                                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                                    <div class="order-2 lg:order-1">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="col-span-2 bento-card bg-stone-100 hover-lift aspect-[2/1] p-8 flex items-center justify-center cursor-pointer" id="morph-card">
+                                                <div class="morph-shape"></div>
+                                            </div>
+                                            <div class="bento-card bg-stone-900 hover-lift aspect-square flex items-center justify-center">
+                                                <div class="text-stone-50 text-4xl">03</div>
+                                            </div>
+                                            <div class="bento-card bg-stone-200 hover-lift aspect-square cursor-pointer" id="click-card">
+                                                <div class="h-full flex items-center justify-center">
+                                                    <div class="click-target"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-1 lg:order-2 lg:pt-12">
+                                        <div class="text-xs tracking-widest uppercase mb-4 text-stone-500">
+                                            Interactive / Experimental
+                                        </div>
+                                        <h3 class="text-4xl lg:text-5xl font-light mb-6">Experimental Work</h3>
+                                        <p class="text-lg leading-relaxed mb-6 text-stone-600">
+                                            An interactive typography experiment exploring the relationship between motion and readability in digital spaces.
+                                        </p>
+                                        <div class="flex gap-4 text-sm tracking-wide">
+                                            <span class="text-stone-500">Three.js</span>
+                                            <span class="text-stone-500">WebGL</span>
+                                            <span class="text-stone-500">Canvas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen py-32 relative grain-bg">
+        <div class="container mx-auto px-6 lg:px-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-2">
+                        <div class="section-number">05</div>
+                    </div>
+                    
+                    <div class="lg:col-span-10">
+                        <h2 class="section-title mb-20">
+                            Let's<br/>Connect
+                        </h2>
+                        
+                        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                            <div>
+                                <p class="text-2xl lg:text-3xl font-light leading-relaxed mb-12">
+                                    Available for freelance projects and collaborations. Always interested in hearing about new opportunities.
+                                </p>
+                                
+                                <div class="space-y-6">
+                                    <a href="mailto:your.email@example.com" class="contact-link block text-xl lg:text-2xl">
+                                        your.email@example.com
+                                    </a>
+                                    <a href="tel:+1234567890" class="contact-link block text-xl lg:text-2xl">
+                                        +1 (234) 567-890
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-8">
+                                <div>
+                                    <h3 class="text-xs tracking-widest uppercase mb-6 text-stone-500">Social</h3>
+                                    <div class="space-y-4">
+                                        <a href="#" class="contact-link block text-lg">LinkedIn</a>
+                                        <a href="#" class="contact-link block text-lg">GitHub</a>
+                                        <a href="#" class="contact-link block text-lg">Dribbble</a>
+                                        <a href="#" class="contact-link block text-lg">Instagram</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="mt-32 pt-12 border-t border-stone-300">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                <div class="text-sm text-stone-500">
+                    © 2024 Your Name. All rights reserved.
+                </div>
+                <div class="text-xs tracking-widest uppercase text-stone-500">
+                    Designed & Developed with care
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
