@@ -1,3 +1,25 @@
+// Mobile Menu Toggle
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+if (mobileMenuToggle && mobileNav) {
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close mobile menu when clicking a link
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
 // Smooth scroll navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -232,3 +254,74 @@ bentoCards.forEach(card => {
         card.style.transform = '';
     });
 });
+
+
+// Disable 3D tilt on touch devices
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (isTouchDevice) {
+    bentoCards.forEach(card => {
+        card.removeEventListener('mousemove', () => {});
+        card.removeEventListener('mouseleave', () => {});
+    });
+}
+
+// Optimize scroll performance
+let ticking = false;
+const scrollHandler = () => {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            updateActiveNav();
+            ticking = false;
+        });
+        ticking = true;
+    }
+};
+
+window.removeEventListener('scroll', updateActiveNav);
+window.addEventListener('scroll', scrollHandler, { passive: true });
+
+// Lazy load animations for better performance
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '50px'
+};
+
+const lazyAnimationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+        }
+    });
+}, observerOptions);
+
+// Pause animations that are off-screen
+document.querySelectorAll('.marquee, .rotating-slow, .rotating-text').forEach(el => {
+    el.style.animationPlayState = 'paused';
+    lazyAnimationObserver.observe(el);
+});
+
+// Prevent zoom on double-tap for better UX
+let lastTouchEnd = 0;
+document.addEventListener('touchend', (event) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, { passive: false });
+
+// Add loading state
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
+// Optimize resize handling
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        // Recalculate any position-dependent elements
+        updateActiveNav();
+    }, 250);
+}, { passive: true });

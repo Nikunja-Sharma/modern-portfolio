@@ -100,6 +100,54 @@ body {
     font-size: 0.625rem;
 }
 
+/* Mobile Menu */
+#mobile-menu-toggle {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu-toggle:active {
+    transform: scale(0.95);
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 20px;
+}
+
+.menu-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fafaf9;
+    transition: all 0.3s ease;
+}
+
+#mobile-menu-toggle.active .menu-line:nth-child(1) {
+    transform: rotate(45deg) translateY(6px);
+}
+
+#mobile-menu-toggle.active .menu-line:nth-child(2) {
+    opacity: 0;
+}
+
+#mobile-menu-toggle.active .menu-line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-6px);
+}
+
+#mobile-nav {
+    backdrop-filter: blur(10px);
+}
+
+#mobile-nav.active {
+    transform: translateX(0);
+}
+
+.mobile-nav-link {
+    font-family: var(--font-serif);
+}
+
 /* Image Frames */
 .image-frame {
     position: relative;
@@ -189,16 +237,126 @@ body {
     .caption-box {
         right: 1rem;
         padding: 0.75rem 1.5rem;
+        font-size: 0.625rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(3rem, 12vw, 8rem);
+    }
+    
+    .section-title {
+        font-size: clamp(2.5rem, 7vw, 5rem);
     }
 }
 
 @media (max-width: 768px) {
     .section-number {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        position: relative;
+        z-index: 0;
+        opacity: 0.15;
+    }
+    
+    /* Stack section number and title on mobile */
+    .lg\:grid-cols-12 {
+        display: block;
+    }
+    
+    .lg\:col-span-2 {
+        margin-bottom: -2rem;
+    }
+    
+    .lg\:col-span-10 {
+        position: relative;
+        z-index: 1;
     }
     
     .experience-item {
         padding-left: 1rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 15vw, 6rem);
+    }
+    
+    .section-title {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+    
+    .caption-box {
+        position: static;
+        margin-top: 1rem;
+        font-size: 0.625rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Mobile bento grid adjustments */
+    .bento-card {
+        min-height: 100px;
+    }
+    
+    /* Reduce marquee speed on mobile */
+    .marquee {
+        animation-duration: 30s;
+    }
+    
+    /* Adjust morph shape size */
+    .morph-shape {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Smaller pulse dot */
+    .pulse-dot {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Mobile navigation spacing */
+    #contents-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: clamp(2rem, 18vw, 5rem);
+    }
+    
+    .section-title {
+        font-size: clamp(1.75rem, 12vw, 3.5rem);
+    }
+    
+    .section-number {
+        font-size: 1.75rem;
+        opacity: 0.12;
+    }
+    
+    /* Better positioning for section numbers */
+    .lg\:col-span-2 {
+        margin-bottom: -1.5rem;
+    }
+    
+    /* Stack bento grids better on small screens */
+    .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Adjust text sizes */
+    .text-xl {
+        font-size: 1.125rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.25rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+    
+    .text-4xl {
+        font-size: 1.75rem;
     }
 }
 
@@ -485,4 +643,151 @@ section::after {
 
 section:last-of-type::after {
     display: none;
+}
+
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .hover-lift:hover {
+        transform: none;
+    }
+    
+    .hover-lift:active {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+    }
+    
+    .bento-card {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Disable 3D tilt on touch devices */
+    .bento-card:hover {
+        transform: none !important;
+    }
+    
+    .bento-card:active {
+        transform: scale(0.98) !important;
+    }
+}
+
+/* Improve text readability on small screens */
+@media (max-width: 640px) {
+    body {
+        font-size: 16px;
+    }
+    
+    p {
+        line-height: 1.7;
+    }
+    
+    /* Better spacing for mobile */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    /* Adjust grid gaps */
+    .gap-3 {
+        gap: 0.5rem;
+    }
+    
+    .gap-4 {
+        gap: 0.75rem;
+    }
+    
+    /* Make interactive elements more touch-friendly */
+    .contact-link {
+        padding: 0.5rem 0;
+        display: inline-block;
+    }
+    
+    /* Better button sizes */
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Landscape mobile adjustments */
+@media (max-width: 896px) and (orientation: landscape) {
+    .min-h-screen {
+        min-height: auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    .section-title {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+    }
+    
+    /* Better grid layouts for tablets */
+    .lg\:grid-cols-12 {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+* {
+    max-width: 100%;
+}
+
+/* Smooth font rendering on all devices */
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bento-card {
+        border-width: 2px;
+    }
+    
+    .nav-link {
+        font-weight: 500;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles if needed */
 }
