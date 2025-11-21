@@ -12,7 +12,7 @@
 <body class="bg-stone-50 text-stone-900">
     
     <!-- Mobile Menu Toggle -->
-    <button id="mobile-menu-toggle" class="fixed top-6 right-6 z-50 lg:hidden bg-stone-900 text-stone-50 w-12 h-12 rounded-full flex items-center justify-center">
+    <button id="mobile-menu-toggle" class="fixed top-6 right-6 lg:hidden bg-stone-900 text-stone-50 w-12 h-12 rounded-full flex items-center justify-center" style="z-index: 9999;">
         <span class="menu-icon">
             <span class="menu-line"></span>
             <span class="menu-line"></span>
@@ -21,7 +21,7 @@
     </button>
 
     <!-- Mobile Navigation -->
-    <nav id="mobile-nav" class="fixed inset-0 bg-stone-50 z-40 lg:hidden transform translate-x-full transition-transform duration-300">
+    <nav id="mobile-nav" class="fixed inset-0 bg-stone-50 lg:hidden transform translate-x-full transition-transform duration-300" style="z-index: 9998;">
         <div class="h-full flex items-center justify-center">
             <div class="space-y-8 text-center">
                 <a href="#hero" class="mobile-nav-link block text-3xl font-light hover:text-stone-600 transition-colors" data-section="hero">
